@@ -1,0 +1,26 @@
+# Secrets
+.env
+.env.*
+!.env.example
+# Environments
+venv/
+.venv/
+__pycache__/
+*.pyc
+# Local database: each developer runs `migrate` (see README). Migrations are tracked.
+db.sqlite3
+# collectstatic output
+staticfiles/
+# Model weights and caches must never be committed
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+.cache/
+hf_cache/
+.ipynb_checkpoints/
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
