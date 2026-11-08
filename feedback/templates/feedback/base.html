@@ -1,0 +1,40 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Undone{% endblock %} · Undone</title>
+  <link rel="stylesheet" href="{% static 'feedback/css/undone.css' %}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="{% url 'feedback:home' %}">Undone</a>
+    {% if user.is_authenticated %}
+      <nav class="mainnav" aria-label="Main">
+        <a href="{% url 'feedback:dataset_list' %}" {% if nav == 'datasets' %}aria-current="page"{% endif %}>My datasets</a>
+        <a href="{% url 'feedback:upload' %}" {% if nav == 'upload' %}aria-current="page"{% endif %}>Upload</a>
+      </nav>
+      <div class="account">
+        <span class="muted">{{ user.username }}</span>
+        <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="linkbtn" type="submit">Log out</button></form>
+      </div>
+    {% else %}
+      <div class="account">
+        <a href="{% url 'login' %}">Log in</a>
+        <a class="btn btn-primary" href="{% url 'feedback:signup' %}">Sign up</a>
+      </div>
+    {% endif %}
+  </header>
+  <main class="container">
+    {% if messages %}
+      <ul class="messages" role="status">
+        {% for message in messages %}<li class="msg msg-{{ message.tags }}">{{ message }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="footer muted">Undone · Team 4 · INFO 490 Project 2</footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

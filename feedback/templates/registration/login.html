@@ -1,0 +1,16 @@
+{% extends 'feedback/base.html' %}
+{% block title %}Log in{% endblock %}
+{% block content %}
+<div class="auth-card card">
+  <h1>Log in</h1>
+  <form method="post" class="stack auth-form">
+    {% csrf_token %}
+    {% if form.errors %}<div class="errors">Your username and password didn't match. Please try again.</div>{% endif %}
+    <div class="field"><label for="id_username">Username</label>{{ form.username }}</div>
+    <div class="field"><label for="id_password">Password</label>{{ form.password }}</div>
+    <input type="hidden" name="next" value="{{ next }}">
+    <button class="btn btn-primary" type="submit">Log in</button>
+  </form>
+  <p class="muted">New here? <a href="{% url 'feedback:signup' %}">Create an account</a></p>
+</div>
+{% endblock %}

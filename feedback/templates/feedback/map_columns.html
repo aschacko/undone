@@ -1,0 +1,22 @@
+{% extends 'feedback/base.html' %}
+{% block title %}Map columns{% endblock %}
+{% block content %}
+<h1>Map columns for “{{ dataset.name }}”</h1>
+{% include 'feedback/_steps.html' %}
+<p class="muted">{{ dataset.source_filename }} · {{ row_count }} data rows · {{ headers|length }} columns. We pre-selected columns whose names look right; check them before importing.</p>
+<form method="post" class="card stack">
+  {% csrf_token %}
+  <div class="grid4">{% include 'feedback/_form_fields.html' %}</div>
+  <h2>Preview (first {{ preview_rows|length }} rows)</h2>
+  <div class="scroll">
+  <table class="table">
+    <thead><tr>{% for h in headers %}<th>{{ h }}</th>{% endfor %}</tr></thead>
+    <tbody>{% for row in preview_rows %}<tr>{% for cell in row %}<td>{{ cell|truncatechars:80 }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+  </table>
+  </div>
+  <div class="actions">
+    <a class="btn" href="{% url 'feedback:dataset_delete' dataset.pk %}">Discard upload</a>
+    <button class="btn btn-primary" type="submit">Import {{ row_count }} rows</button>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+<div class="pagehead">
+  <div>
+    <h1>{{ dataset.name }}</h1>
+    <p class="muted">{{ dataset.source_filename }} · <span class="badge badge-{{ dataset.status }}">{{ dataset.get_status_display }}</span>{% if dataset.description %} · {{ dataset.description }}{% endif %}</p>
+  </div>
+  <div class="actions">
+    <a class="btn" href="{% url 'feedback:export_csv' dataset.pk %}">Export CSV</a>
+    <a class="btn" href="{% url 'feedback:dataset_edit' dataset.pk %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'feedback:dataset_delete' dataset.pk %}">Delete</a>
+  </div>
+</div>
+<nav class="tabs" aria-label="Dataset">
+  <a href="{% url 'feedback:dataset_detail' dataset.pk %}" {% if tab == 'dashboard' %}aria-current="page"{% endif %}>Dashboard</a>
+  <a href="{% url 'feedback:response_list' dataset.pk %}" {% if tab == 'responses' %}aria-current="page"{% endif %}>Responses</a>
+</nav>

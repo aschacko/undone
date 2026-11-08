@@ -1,0 +1,58 @@
+{% extends 'feedback/base.html' %}
+{% block title %}Responses · {{ dataset.name }}{% endblock %}
+{% block content %}
+{% include 'feedback/_dataset_tabs.html' with tab='responses' %}
+
+<form method="get" class="filters card">
+  <input type="search" name="q" value="{{ query }}" placeholder="Search feedback text…" aria-label="Search feedback text">
+  <select name="plan" aria-label="Plan">
+    <option value="">All plans</option>
+    {% for p in plans %}<option value="{{ p }}" {% if p == plan %}selected{% endif %}>{{ p }}</option>{% endfor %}
+  </select>
+  <select name="theme" aria-label="Theme">
+    <option value="">All themes</option>
+    <option value="none" {% if theme_param == 'none' %}selected{% endif %}>Unassigned</option>
+    {% for t in themes %}<option value="{{ t.pk }}" {% if current_theme and t.pk == current_theme.pk %}selected{% endif %}>{{ t.name }}</option>{% endfor %}
+  </select>
+  <button class="btn btn-primary" type="submit">Filter</button>
+  {% if filter_querystring %}<a class="btn" href="{% url 'feedback:response_list' dataset.pk %}">Clear</a>{% endif %}
+</form>
+
+<p class="muted">{{ page.paginator.count }} response{{ page.paginator.count|pluralize }}{% if current_theme %} in “{{ current_theme.name }}”{% endif %}.{% if not themes %} <a href="{% url 'feedback:theme_create' dataset.pk %}">Create a theme</a> to start grouping.{% endif %}</p>
+
+<table class="table">
+  <thead><tr><th class="num">Row</th><th>Feedback</th><th>Plan</th><th>Date</th><th>Theme</th></tr></thead>
+  <tbody>
+  {% for r in page %}
+    <tr>
+      <td class="num">{{ r.row_number }}</td>
+      <td class="feedback-text">{{ r.text }}{% if r.segment %}<br><small class="muted">{{ r.segment }}</small>{% endif %}</td>
+      <td>{{ r.plan|default:"—" }}</td>
+      <td>{{ r.cancelled_on|date:"Y-m-d"|default:"—" }}</td>
+      <td>
+        <form method="post" action="{% url 'feedback:assign_theme' dataset.pk r.pk %}" class="inline">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.get_full_path }}">
+          <select name="theme" aria-label="Theme for row {{ r.row_number }}">
+            <option value="">Unassigned</option>
+            {% for t in themes %}<option value="{{ t.pk }}" {% if r.theme_id == t.pk %}selected{% endif %}>{{ t.name }}</option>{% endfor %}
+          </select>
+          <button class="btn btn-small" type="submit">Save</button>
+        </form>
+        {% if r.theme_confidence is not None %}<small class="muted">AI confidence {{ r.theme_confidence|floatformat:2 }}</small>{% endif %}
+      </td>
+    </tr>
+  {% empty %}
+    <tr><td colspan="5" class="muted">No responses match these filters.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% if page.has_other_pages %}
+<nav class="pager" aria-label="Pages">
+  {% if page.has_previous %}<a class="btn" href="?{% if filter_querystring %}{{ filter_querystring }}&{% endif %}page={{ page.previous_page_number }}">‹ Previous</a>{% endif %}
+  <span class="muted">Page {{ page.number }} of {{ page.paginator.num_pages }}</span>
+  {% if page.has_next %}<a class="btn" href="?{% if filter_querystring %}{{ filter_querystring }}&{% endif %}page={{ page.next_page_number }}">Next ›</a>{% endif %}
+</nav>
+{% endif %}
+{% endblock %}

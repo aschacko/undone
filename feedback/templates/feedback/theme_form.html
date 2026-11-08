@@ -1,0 +1,10 @@
+{% extends 'feedback/base.html' %}
+{% block title %}{% if theme %}Rename theme{% else %}New theme{% endif %}{% endblock %}
+{% block content %}
+<h1>{% if theme %}Rename “{{ theme.name }}”{% else %}New theme in “{{ dataset.name }}”{% endif %}</h1>
+<form method="post" class="card stack narrow">
+  {% csrf_token %}
+  {% include 'feedback/_form_fields.html' %}
+  <div class="actions"><a class="btn" href="{% url 'feedback:dataset_detail' dataset.pk %}">Cancel</a><button class="btn btn-primary" type="submit">Save</button></div>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'feedback/base.html' %}
+{% block title %}Why do customers cancel?{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>Find out why customers cancel.</h1>
+  <p class="lead">Undone turns a spreadsheet of cancellation feedback into themes, trends and comparisons across plans, so you can see which problems come up most without reading every response.</p>
+  <p><a class="btn btn-primary" href="{% url 'feedback:signup' %}">Create a free account</a> <a class="btn" href="{% url 'login' %}">Log in</a></p>
+</section>
+<section class="cards three">
+  <div class="card"><h3>1. Upload a CSV</h3><p>Export cancellation survey answers from any tool. Tell Undone which column holds the feedback, date and plan.</p></div>
+  <div class="card"><h3>2. Group into themes</h3><p>Responses are grouped into themes like pricing or missing features. AI grouping is in progress; you can create and assign themes yourself today.</p></div>
+  <div class="card"><h3>3. See the patterns</h3><p>Charts show the top reasons, how they change month to month, and how plans compare. Export the result as CSV.</p></div>
+</section>
+{% endblock %}

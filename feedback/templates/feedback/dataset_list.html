@@ -1,0 +1,30 @@
+{% extends 'feedback/base.html' %}
+{% block title %}My datasets{% endblock %}
+{% block content %}
+<div class="pagehead">
+  <h1>My datasets</h1>
+  <a class="btn btn-primary" href="{% url 'feedback:upload' %}">Upload CSV</a>
+</div>
+{% if datasets %}
+<table class="table">
+  <thead><tr><th>Name</th><th>Status</th><th class="num">Responses</th><th class="num">Themes</th><th>Uploaded</th></tr></thead>
+  <tbody>
+  {% for d in datasets %}
+    <tr>
+      <td><a href="{{ d.get_absolute_url }}">{{ d.name }}</a><br><small class="muted">{{ d.source_filename }}</small></td>
+      <td><span class="badge badge-{{ d.status }}">{{ d.get_status_display }}</span></td>
+      <td class="num">{{ d.response_count }}</td>
+      <td class="num">{{ d.theme_count }}</td>
+      <td>{{ d.created_at|date:"M j, Y" }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="empty card">
+  <h2>No datasets yet</h2>
+  <p>Upload a CSV of cancellation feedback to get started. Not sure of the format? Use <code>sample_data/sample_cancellations.csv</code> from the repository.</p>
+  <a class="btn btn-primary" href="{% url 'feedback:upload' %}">Upload CSV</a>
+</div>
+{% endif %}
+{% endblock %}

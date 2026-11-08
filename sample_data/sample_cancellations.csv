@@ -1,0 +1,47 @@
+customer_id,cancel_date,plan,region,cancellation_reason
+C001,2026-01-04,Basic,US,It's just too expensive for what I use it for.
+C002,2026-01-09,Pro,US,The monthly price went up and it's no longer worth it to me.
+C003,2026-01-15,Team,EU,We needed SSO and it still isn't supported.
+C004,2026-01-18,Basic,US,The app kept crashing when I tried to export my reports.
+C005,2026-01-22,Pro,APAC,Found a cheaper alternative that does the same thing.
+C006,2026-01-27,Basic,EU,Support took a week to reply to my billing question.
+C007,2026-02-02,Team,US,No integration with Salesforce which our sales team relies on.
+C008,2026-02-05,Basic,US,I only needed it for one project and the project is over.
+C009,2026-02-10,Pro,EU,Too pricey after the free trial ended.
+C010,2026-02-14,Pro,US,Sync between my phone and laptop stopped working.
+C011,2026-02-19,Basic,APAC,Can't justify the cost on a student budget.
+C012,2026-02-24,Team,EU,"Missing an audit log, which our compliance team requires."
+C013,2026-03-01,Basic,US,"Price increase again, second time this year."
+C014,2026-03-04,Pro,US,Login errors almost every morning for two weeks.
+C015,2026-03-08,Team,APAC,We'd love offline mode but it's not there.
+C016,2026-03-12,Basic,EU,Not worth paying monthly for features I rarely use.
+C017,2026-03-15,Pro,US,"Customer service was rude when I asked for a refund."
+C018,2026-03-19,Basic,US,The export to Excel feature is missing.
+C019,2026-03-23,Pro,EU,Way too expensive compared to competitors.
+C020,2026-03-27,Team,US,The dashboard is slow to load with our data size.
+C021,2026-04-02,Basic,APAC,Switching jobs and won't need it anymore.
+C022,2026-04-05,Pro,US,Subscription costs more than my phone bill.
+C023,2026-04-09,Basic,EU,"Bugs everywhere, notifications fire twice."
+C024,2026-04-13,Team,US,No API access on our plan.
+C025,2026-04-16,Pro,APAC,I was charged twice and support never fixed it.
+C026,2026-04-20,Basic,US,Cheaper option elsewhere with the same features.
+C027,2026-04-24,Pro,EU,Lacks dark mode and keyboard shortcuts.
+C028,2026-04-28,Team,US,Pricing per seat got too high as our team grew.
+C029,2026-05-02,Basic,US,The app freezes on older Android phones.
+C030,2026-05-06,Pro,US,Price doubled at renewal without warning.
+C031,2026-05-09,Basic,APAC,Just not using it enough.
+C032,2026-05-13,Team,EU,We need role-based permissions and they're not available.
+C033,2026-05-17,Pro,US,Too expensive. That's it.
+C034,2026-05-21,Basic,EU,Chat support is a bot that never understands my question.
+C035,2026-05-24,Pro,APAC,Data import fails for files over 10 MB.
+C036,2026-05-28,Basic,US,Costs too much for a single user.
+C037,2026-06-01,Team,US,"The per-seat price is not sustainable for a nonprofit."
+C038,2026-06-04,Pro,EU,Calendar integration has been broken since the last update.
+C039,2026-06-08,Basic,US,I can get the free version of a competitor.
+C040,2026-06-11,Pro,US,No way to share reports with clients.
+C041,2026-06-15,Basic,APAC,Monthly fee is higher than I expected.
+C042,2026-06-18,Team,EU,Waiting on support for 10 days with no response.
+C043,2026-06-22,Pro,US,"Too expensive, and the price keeps going up."
+C044,2026-06-25,Basic,US,
+C045,06/28/2026,Pro,EU,Search doesn't find older items.
+C046,sometime in June,Basic,US,Moving to a tool my company already pays for.
