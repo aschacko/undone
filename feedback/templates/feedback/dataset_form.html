@@ -1,0 +1,10 @@
+{% extends 'feedback/base.html' %}
+{% block title %}Edit dataset{% endblock %}
+{% block content %}
+<h1>Edit “{{ object.name }}”</h1>
+<form method="post" class="card stack narrow">
+  {% csrf_token %}
+  {% include 'feedback/_form_fields.html' %}
+  <div class="actions"><a class="btn" href="{{ object.get_absolute_url }}">Cancel</a><button class="btn btn-primary" type="submit">Save</button></div>
+</form>
+{% endblock %}

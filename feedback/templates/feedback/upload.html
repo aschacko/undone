@@ -1,0 +1,12 @@
+{% extends 'feedback/base.html' %}
+{% block title %}Upload feedback{% endblock %}
+{% block content %}
+<h1>Upload cancellation feedback</h1>
+{% include 'feedback/_steps.html' %}
+<form method="post" enctype="multipart/form-data" class="card stack narrow">
+  {% csrf_token %}
+  {% include 'feedback/_form_fields.html' %}
+  <p class="muted">One row per cancelled customer. Needs a column with their feedback text; a date column and a plan column are optional but unlock trends and plan comparisons.</p>
+  <div class="actions"><a class="btn" href="{% url 'feedback:dataset_list' %}">Cancel</a><button class="btn btn-primary" type="submit">Next: map columns →</button></div>
+</form>
+{% endblock %}

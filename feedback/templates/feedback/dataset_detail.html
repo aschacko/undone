@@ -1,0 +1,78 @@
+{% extends 'feedback/base.html' %}
+{% load static %}
+{% block title %}{{ dataset.name }}{% endblock %}
+{% block content %}
+{% include 'feedback/_dataset_tabs.html' with tab='dashboard' %}
+
+<section class="kpis">
+  <div class="card kpi"><span class="muted">Responses</span><b>{{ stats.total }}</b></div>
+  <div class="card kpi"><span class="muted">Themes</span><b>{{ stats.theme_count }}</b></div>
+  <div class="card kpi"><span class="muted">Top theme</span><b>{% if top_theme %}{{ top_theme.name }}{% else %}—{% endif %}</b></div>
+  <div class="card kpi"><span class="muted">Unassigned</span><b>{{ stats.unassigned_percent }}%</b></div>
+</section>
+
+<section class="grid2">
+  <div class="card">
+    <h2>Responses by theme</h2>
+    <canvas id="themeChart" height="220" aria-label="Bar chart of responses by theme" role="img"></canvas>
+    <table class="table compact">
+      <thead><tr><th>Theme</th><th class="num">Responses</th><th class="num">%</th></tr></thead>
+      <tbody>
+      {% for t in stats.themes %}
+        <tr><td><a href="{% url 'feedback:response_list' dataset.pk %}?theme={% if t.id %}{{ t.id }}{% else %}none{% endif %}">{{ t.name }}</a></td><td class="num">{{ t.count }}</td><td class="num">{{ t.percent }}%</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h2>Cancellations per month</h2>
+    {% if stats.months %}
+      <canvas id="monthChart" height="220" aria-label="Line chart of cancellations per month" role="img"></canvas>
+    {% else %}
+      <p class="muted">No dates in this dataset. Map a date column when uploading to see trends.</p>
+    {% endif %}
+    <h2>By plan</h2>
+    {% if stats.plans %}
+      <table class="table compact">
+        <thead><tr><th>Plan</th><th class="num">Responses</th></tr></thead>
+        <tbody>{% for p in stats.plans %}<tr><td><a href="{% url 'feedback:response_list' dataset.pk %}?plan={{ p.plan|urlencode }}">{{ p.plan }}</a></td><td class="num">{{ p.count }}</td></tr>{% endfor %}</tbody>
+      </table>
+    {% else %}
+      <p class="muted">No plan column was mapped.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="card">
+  <div class="pagehead">
+    <h2>Themes</h2>
+    <a class="btn btn-primary" href="{% url 'feedback:theme_create' dataset.pk %}">+ New theme</a>
+  </div>
+  {% if theme_list %}
+  <table class="table">
+    <thead><tr><th>Theme</th><th>Source</th><th class="num">Responses</th><th></th></tr></thead>
+    <tbody>
+    {% for theme in theme_list %}
+      <tr>
+        <td><a href="{{ theme.get_absolute_url }}">{{ theme.name }}</a>{% if theme.description %}<br><small class="muted">{{ theme.description }}</small>{% endif %}</td>
+        <td>{{ theme.get_source_display }}</td>
+        <td class="num">{{ theme.count }}</td>
+        <td class="actions"><a href="{% url 'feedback:theme_edit' dataset.pk theme.pk %}">Rename</a> <a href="{% url 'feedback:theme_delete' dataset.pk theme.pk %}">Delete</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p class="muted">No themes yet. Create themes such as “Pricing” or “Missing features”, then assign responses to them on the <a href="{% url 'feedback:response_list' dataset.pk %}">Responses</a> tab. Automatic AI grouping is being built.</p>
+  {% endif %}
+</section>
+<p class="muted small">Themes describe patterns in what customers wrote. They are not proof of why customers cancelled.</p>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+  window.UNDONE_SUMMARY_URL = "{% url 'feedback:api_dataset_summary' dataset.pk %}";
+</script>
+<script src="{% static 'feedback/js/dashboard.js' %}"></script>
+{% endblock %}
