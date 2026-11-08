@@ -1,0 +1,34 @@
+P2-A3 test evidence - output of: python manage.py test -v 2
+Generated 2026-11-08 02:05 CST with Python 3.14.8, Django 5.2.17
+
+  Applying sessions.0001_initial...test_apply_assignments_creates_ai_themes_and_ignores_foreign_ids (feedback.tests.AIHandOffTests.test_apply_assignments_creates_ai_themes_and_ignores_foreign_ids) ... ok
+test_responses_for_analysis_lists_id_and_text (feedback.tests.AIHandOffTests.test_responses_for_analysis_lists_id_and_text) ... ok
+test_protected_pages_redirect_to_login (feedback.tests.AuthTests.test_protected_pages_redirect_to_login) ... ok
+test_public_pages_render (feedback.tests.AuthTests.test_public_pages_render) ... ok
+test_signup_logs_in_and_goes_to_upload (feedback.tests.AuthTests.test_signup_logs_in_and_goes_to_upload) ... ok
+test_assign_theme_and_reject_foreign_theme (feedback.tests.DatasetFeatureTests.test_assign_theme_and_reject_foreign_theme) ... ok
+test_assign_theme_ignores_offsite_next (feedback.tests.DatasetFeatureTests.test_assign_theme_ignores_offsite_next) ... ok
+test_dashboard_shows_aggregates (feedback.tests.DatasetFeatureTests.test_dashboard_shows_aggregates) ... ok
+test_edit_and_delete_dataset (feedback.tests.DatasetFeatureTests.test_edit_and_delete_dataset) ... ok
+test_export_csv (feedback.tests.DatasetFeatureTests.test_export_csv) ... ok
+test_response_search_and_filters (feedback.tests.DatasetFeatureTests.test_response_search_and_filters) ... ok
+test_summary_api (feedback.tests.DatasetFeatureTests.test_summary_api) ... ok
+test_theme_create_rename_delete (feedback.tests.DatasetFeatureTests.test_theme_create_rename_delete) ... ok
+test_all_empty_rows_imports_nothing (feedback.tests.ImportTests.test_all_empty_rows_imports_nothing) ... ok
+test_import_skips_empty_text_and_reports_bad_dates (feedback.tests.ImportTests.test_import_skips_empty_text_and_reports_bad_dates) ... ok
+test_deleting_dataset_cascades (feedback.tests.ModelTests.test_deleting_dataset_cascades) ... ok
+test_deleting_theme_unassigns_but_keeps_responses (feedback.tests.ModelTests.test_deleting_theme_unassigns_but_keeps_responses) ... ok
+test_theme_from_other_dataset_is_invalid (feedback.tests.ModelTests.test_theme_from_other_dataset_is_invalid) ... ok
+test_dataset_list_shows_only_own_datasets (feedback.tests.OwnershipTests.test_dataset_list_shows_only_own_datasets) ... ok
+test_every_dataset_url_is_404_for_other_users (feedback.tests.OwnershipTests.test_every_dataset_url_is_404_for_other_users) ... ok
+test_guess_mapping_uses_each_column_once (feedback.tests.ParsingTests.test_guess_mapping_uses_each_column_once) ... ok
+test_parse_csv_returns_headers_and_skips_blank_lines (feedback.tests.ParsingTests.test_parse_csv_returns_headers_and_skips_blank_lines) ... ok
+test_parse_date_formats (feedback.tests.ParsingTests.test_parse_date_formats) ... ok
+test_rejects_empty_header_only_duplicate_and_unnamed (feedback.tests.ParsingTests.test_rejects_empty_header_only_duplicate_and_unnamed) ... ok
+test_rejects_too_many_rows (feedback.tests.ParsingTests.test_rejects_too_many_rows) ... ok
+test_full_upload_then_map_then_dashboard (feedback.tests.UploadWorkflowTests.test_full_upload_then_map_then_dashboard) ... ok
+test_mapping_rejects_same_column_twice_and_missing_text (feedback.tests.UploadWorkflowTests.test_mapping_rejects_same_column_twice_and_missing_text) ... ok
+test_upload_rejects_non_csv_and_duplicate_name (feedback.tests.UploadWorkflowTests.test_upload_rejects_non_csv_and_duplicate_name) ... ok
+test_upload_rejects_non_utf8 (feedback.tests.UploadWorkflowTests.test_upload_rejects_non_utf8) ... ok
+Ran 29 tests in 4.749s
+OK

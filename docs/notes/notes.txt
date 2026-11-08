@@ -1,0 +1,45 @@
+UNDONE - TEAM 4 NOTES
+=====================
+One section per person per week: what was done, what is handed off, what
+blocked you, and bugs that cost time.
+
+---------------------------------------------------------------------
+Week of Nov 2 - P2-A3 first draft
+---------------------------------------------------------------------
+
+Ashok (Parts 2, 5, 6)
+
+Done
+- Created the repository and the Django project (undone_project) with split
+  settings (base / development / production) and .env-based secrets.
+- feedback app: Dataset, FeedbackResponse, Theme models and migration 0001.
+- Two-step CSV upload: validate file -> map columns (pre-selected by header
+  name, 5-row preview) -> import. Empty-text rows skipped, unreadable dates
+  reported by row number.
+- Dashboard (KPIs, by theme, by month, by plan), response search/filter/
+  pagination, theme create/rename/delete, assign response to theme, dataset
+  edit/delete, CSV export, JSON summary API used by the Chart.js charts.
+- Sign up / log in / log out; every dataset URL is owner-only (404 otherwise).
+- load_demo management command + synthetic sample CSV (46 rows, written by us,
+  not real customers).
+- 29 tests, all passing.
+- README.md, docs/P2-A3_roadmap.md, P2-A2 PDFs copied into docs/.
+
+Handed off
+- Laasyasri: the AI step only needs feedback/services.py
+  responses_for_analysis(dataset) and apply_theme_assignments(dataset, {...}).
+  See README "AI functionality". Requirement 1 (scope update) and
+  Requirement 3 (AI plan) go in docs/ - roadmap file says where.
+
+Blocked / late
+- Part 2 was requested by Friday afternoon so Part 3 could start; it was
+  finished Sunday Nov 8. Part 3 work in Django could not start before then.
+
+Bugs that cost time
+- Dashboard listed "Unassigned" above a real theme with the same count:
+  SQLite sorts the NULL theme first on ties. Fixed by always sorting
+  Unassigned last (views.dataset_stats); pinned by
+  DatasetFeatureTests.test_dashboard_shows_aggregates.
+
+Laasyasri (Parts 1, 3, 4)
+- (to be filled in by Laasyasri)
