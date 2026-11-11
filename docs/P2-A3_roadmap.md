@@ -19,7 +19,7 @@ The team split the six final-project parts as follows (agreed by message, week o
 
 | Requirement | Owner | Where |
 |---|---|---|
-| 1. Updated product scope (1 page) | Laasyasri | *To be added by Laasyasri.* The P2-A2 idea and wireframes are in `docs/` for reference. |
+| 1. Updated product scope (1 page) | Laasyasri | This repository, under docs folder (P2-A3_part1.pdf) |
 | 2. Functional Django foundation | Ashok | This repository. See README "Features working in this draft". |
 | 3. Initial AI implementation / plan | Laasyasri | *To be added by Laasyasri.* The Django hand-off point is ready (README, "AI functionality"). |
 | 4. Development progress and roadmap | Both | This file |
