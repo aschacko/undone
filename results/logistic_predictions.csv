@@ -1,0 +1,33 @@
+id,text,expected_theme,predicted_theme,score,correct
+test-001,The latest rate hike pushed this out of my budget,Pricing,Pricing,0.3771,1
+test-002,I liked it but the renewal fee is more than I can pay,Pricing,Pricing,0.4504,1
+test-003,Too much money for a service I only use sometimes,Pricing,Pricing,0.2879,1
+test-004,I am reducing recurring bills because of the cost,Pricing,Pricing,0.3725,1
+test-005,The membership price is no longer reasonable,Pricing,Lack of Use,0.3511,0
+test-006,My student budget cannot cover the fee anymore,Pricing,Pricing,0.3835,1
+test-007,I could not find any affordable plan,Pricing,Customer Support,0.2929,0
+test-008,The new billing amount is the reason I left,Pricing,Pricing,0.3594,1
+test-009,The application closes itself every time I try to use it,Product Issues,Product Issues,0.3409,1
+test-010,I cannot complete a task without the page freezing,Product Issues,Product Issues,0.3437,1
+test-011,The recent patch made the website unusable,Product Issues,Product Issues,0.3194,1
+test-012,Nothing happens when I press the submit button,Product Issues,Product Issues,0.3857,1
+test-013,My data will not synchronize across devices,Product Issues,Lack of Use,0.2883,0
+test-014,The service times out before it opens,Product Issues,Product Issues,0.2734,1
+test-015,It continually shows an error code and exits,Product Issues,Product Issues,0.3223,1
+test-016,Playback stutters and then stops entirely,Product Issues,Product Issues,0.3255,1
+test-017,Nobody from the help desk got back to me,Customer Support,Customer Support,0.4614,1
+test-018,Their agents kept passing me around with no answer,Customer Support,Customer Support,0.3116,1
+test-019,I waited on hold and never reached anyone,Customer Support,Customer Support,0.2961,1
+test-020,The response from support was dismissive,Customer Support,Customer Support,0.4615,1
+test-021,They closed my case before fixing the problem,Customer Support,Customer Support,0.2891,1
+test-022,I sent several messages asking for assistance and heard nothing,Customer Support,Customer Support,0.2984,1
+test-023,Customer care made the situation worse,Customer Support,Customer Support,0.3022,1
+test-024,I could not get a clear answer from their team,Customer Support,Customer Support,0.419,1
+test-025,I have not logged into my account all semester,Lack of Use,Lack of Use,0.4406,1
+test-026,This membership mostly sits idle,Lack of Use,Lack of Use,0.3139,1
+test-027,My routine changed and I no longer use the service,Lack of Use,Lack of Use,0.4275,1
+test-028,I signed up months ago and barely touched it,Lack of Use,Lack of Use,0.3667,1
+test-029,I simply have no need for the subscription now,Lack of Use,Lack of Use,0.3388,1
+test-030,I never find time to use this platform,Lack of Use,Lack of Use,0.4318,1
+test-031,It has been weeks since I last opened it,Lack of Use,Lack of Use,0.3119,1
+test-032,I am not using it often enough to continue,Lack of Use,Lack of Use,0.4002,1

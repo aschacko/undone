@@ -42,4 +42,26 @@ Bugs that cost time
   DatasetFeatureTests.test_dashboard_shows_aggregates.
 
 Laasyasri (Parts 1, 3, 4)
-- (to be filled in by Laasyasri)
+Done
+- Completed Part 1 product scope document and uploaded P2-A3_part1.pdf to docs/.
+- Created an initial AI prototype using TF-IDF with Logistic Regression through Scikit-learn.
+- Tested the prototype using 20 synthetic training responses and 4 test responses. Got 75% accuracy.
+- Created a larger dataset with 80 training responses and 32 test responses across 4 cancellation themes.
+- Trained the model and got 84.4% accuracy with a macro F1 score of 0.841.
+- Reviewed 5 incorrect predictions and added 12 more training examples to improve the model.
+- Retrained the model using 92 examples and improved accuracy to 90.6% with a macro F1 score of 0.905 on the same development test set.
+- Saved the trained model as cancellation_logistic.joblib (44.9 KB).
+- Selected Logistic Regression over Qwen3-0.6B and MiniLM for now because it requires less storage and should be easier to deploy.
+- Prepared the initial AI implementation plan for Requirement 3.
+
+Handed off
+- The trained Logistic Regression model is ready for Django integration.
+- Will use responses_for_analysis(dataset) and apply_theme_assignments(dataset, {...}) in feedback/services.py.
+- Need to connect the model to Django so users can automatically classify feedback and view results on the dashboard.
+
+Blocked / late
+- PythonAnywhere's free storage limit makes larger Hugging Face models difficult to deploy.
+- The model still needs additional training data and testing before final integration.
+
+Bugs that cost time
+- Larger model incorrectly classified 5 out of 32 test responses. Added more varied training examples and reduced the errors to 3.

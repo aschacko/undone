@@ -41,16 +41,20 @@ The team split the six final-project parts as follows (agreed by message, week o
 Dates marked *proposed* have not yet been agreed by the whole team.
 
 | Task | Current status | Responsible member | Expected completion |
-|---|---|---|---|
+|---|---|---|---------------------|
 | Django core features | **Done for draft.** Upload, mapping, dashboard, responses, theme CRUD, export. Remaining: trend view by theme and plan-vs-plan comparison page (wireframes 7 and 8), and the analysis status page (wireframe 4). | Ashok | Nov 23 *(proposed)* |
 | Database and APIs | **Done for draft.** 3 models, migrations, summary JSON API. Remaining: analysis-status API for the processing page, and per-theme trend data in the API. | Ashok | Nov 23 *(proposed)* |
-| AI integration | Not started in this repository. Django hand-off functions are ready and tested (`responses_for_analysis`, `apply_theme_assignments`). | Laasyasri | *Laasyasri to set* |
-| Evaluation and testing | Django test suite: 29 tests passing. AI evaluation (5 realistic tests, failure analysis, before/after improvement) not started. | Laasyasri (AI evaluation), Ashok (Django tests) | *Laasyasri to set*; Django tests ongoing |
-| Deployment | Not started. Production settings, WhiteNoise and the secret-key check are already in place. Next: PythonAnywhere deploy, HTTPS settings, cost comparison, 10k-DAU scalability write-up. | Ashok | Dec 1 *(proposed)* |
-| Documentation | README with setup, environment, database, run and test steps is done. Remaining: `README_AI.md` (Laasyasri), deployment section, final screenshots. | Ashok (README), Laasyasri (README_AI.md) | Dec 6 *(proposed)* |
+| AI integration | Not started in this repository. Django hand-off functions are ready and tested (`responses_for_analysis`, `apply_theme_assignments`). | Laasyasri | Nov 25 *(proposed)* |
+| Evaluation and testing | Django test suite: 29 tests passing. AI evaluation (5 realistic tests, failure analysis, before/after improvement) not started. | Laasyasri (AI evaluation), Ashok (Django tests) | Dec 2 *(proposed)*  |
+| Deployment | Not started. Production settings, WhiteNoise and the secret-key check are already in place. Next: PythonAnywhere deploy, HTTPS settings, cost comparison, 10k-DAU scalability write-up. | Ashok | Dec 1 *(proposed)*  |
+| Documentation | README with setup, environment, database, run and test steps is done. Remaining: `README_AI.md` (Laasyasri), deployment section, final screenshots. | Ashok (README), Laasyasri (README_AI.md) | Dec 6 *(proposed)*  |
 
 ## Dependencies and risks
 
 - **AI integration blocks evaluation, and both block the demo video's AI segment (1:45–2:30).** The model must run inside Django by roughly Nov 30 to leave time for Part 4 testing.
-- **Deployment target limits the model choice.** PythonAnywhere's free tier allows 512 MB for the virtualenv plus project, and `torch` alone exceeds that. A local Hugging Face model that needs `torch` cannot run there. Laasyasri's model choice should account for this: for example a hosted API (check the PythonAnywhere allowlist), a small non-torch model, or an off-site batch job that writes results through `apply_theme_assignments`. This decision should be made together, early.
+- **AI deployment limitations.** We are currently using TF-IDF with Logistic Regression because it requires less storage than Qwen3-0.6B or MiniLM. The trained model is approximately 44.9 KB and does not require PyTorch. We still need to verify that Scikit-learn and the full Django application fit within PythonAnywhere's free storage limit. The model has only been tested locally and still needs Django integration. 
 - The AI processing page (wireframe 4) needs a status field. It already exists: `Dataset.status` has Awaiting analysis / Analyzing / Analyzed / Failed.
+
+
+## TO-DO
+Remaining: test on more realistic customer feedback with different writing styles and multiple cancellation reasons. Complete independent evaluation and Django testing.

@@ -1,0 +1,93 @@
+id,text,theme
+train-001,The monthly subscription is too expensive for me,Pricing
+train-002,They raised my bill again without adding anything new,Pricing
+train-003,My budget cannot handle another recurring charge,Pricing
+train-004,The annual membership costs more than I expected,Pricing
+train-005,The service is not worth what I pay each month,Pricing
+train-006,I need a cheaper option than this plan,Pricing
+train-007,This membership fee is higher than other services,Pricing
+train-008,The recent price increase made me cancel,Pricing
+train-009,I cannot justify paying this amount anymore,Pricing
+train-010,I am trying to cut down my monthly expenses,Pricing
+train-011,Even the basic tier is outside my budget,Pricing
+train-012,The renewal charge is just too much,Pricing
+train-013,I found the pricing unreasonable,Pricing
+train-014,I want to stop paying for something so costly,Pricing
+train-015,The discount ended and now I cannot afford it,Pricing
+train-016,The plan is too pricey for what it provides,Pricing
+train-017,I am canceling because of the subscription rate,Pricing
+train-018,The recurring fees have gotten out of control,Pricing
+train-019,I would stay if there were a lower cost tier,Pricing
+train-020,I need to save money so this payment has to go,Pricing
+train-021,The app keeps crashing when I open it,Product Issues
+train-022,I cannot get past the login screen because of an error,Product Issues
+train-023,The website freezes during checkout,Product Issues
+train-024,Important buttons do not work on my phone,Product Issues
+train-025,The service is very slow when I need it,Product Issues
+train-026,I keep losing my progress because of glitches,Product Issues
+train-027,The mobile app fails to load content,Product Issues
+train-028,The latest update broke the features I used,Product Issues
+train-029,I get a server error every time I sign in,Product Issues
+train-030,The program shuts down unexpectedly,Product Issues
+train-031,Notifications never arrive even when turned on,Product Issues
+train-032,I cannot save my changes due to a bug,Product Issues
+train-033,Pages take forever to load,Product Issues
+train-034,Video playback fails constantly,Product Issues
+train-035,The interface is unusable because it lags,Product Issues
+train-036,My account does not sync between devices,Product Issues
+train-037,I keep getting logged out for no reason,Product Issues
+train-038,The search feature stopped working,Product Issues
+train-039,The software is unreliable and full of bugs,Product Issues
+train-040,The app stops responding in the middle of tasks,Product Issues
+train-041,Support never answered my email,Customer Support
+train-042,I waited days for a reply from customer service,Customer Support
+train-043,The help agent was rude and dismissive,Customer Support
+train-044,Nobody followed up on my support ticket,Customer Support
+train-045,I could not reach a real person for help,Customer Support
+train-046,The support team kept transferring me,Customer Support
+train-047,My complaint was ignored by the help desk,Customer Support
+train-048,Customer service gave me the wrong information,Customer Support
+train-049,I spent an hour waiting to talk to an agent,Customer Support
+train-050,The support representative did not resolve anything,Customer Support
+train-051,I asked for help twice but got no response,Customer Support
+train-052,The help center refused to address my issue,Customer Support
+train-053,I had a bad experience with the service team,Customer Support
+train-054,Their customer support is impossible to contact,Customer Support
+train-055,The agent closed my ticket without solving it,Customer Support
+train-056,I received only automated replies when I needed help,Customer Support
+train-057,Support promised a callback but never called,Customer Support
+train-058,The representative was unprofessional,Customer Support
+train-059,It took too long to get assistance,Customer Support
+train-060,I could not get help when something went wrong,Customer Support
+train-061,I hardly ever open the app anymore,Lack of Use
+train-062,I have not used this service in months,Lack of Use
+train-063,I no longer need a subscription like this,Lack of Use
+train-064,My schedule is too busy to use the membership,Lack of Use
+train-065,I signed up but never really used it,Lack of Use
+train-066,I am not interested in the service anymore,Lack of Use
+train-067,I do not have time to watch the content,Lack of Use
+train-068,I stopped relying on this tool,Lack of Use
+train-069,I rarely use the features I subscribed for,Lack of Use
+train-070,I am not getting around to using my account,Lack of Use
+train-071,My needs changed so I do not use this anymore,Lack of Use
+train-072,The membership sits unused most of the time,Lack of Use
+train-073,I forgot I even had this subscription,Lack of Use
+train-074,I have moved on to a different hobby,Lack of Use
+train-075,I just do not need access anymore,Lack of Use
+train-076,There is no reason for me to keep an unused plan,Lack of Use
+train-077,I barely log in once a month,Lack of Use
+train-078,I do not use enough of the service to keep it,Lack of Use
+train-079,The subscription no longer fits my routine,Lack of Use
+train-080,I am canceling because I never get around to it,Lack of Use
+train-081,The cost of membership is unreasonable,Pricing
+train-082,I need a more affordable subscription,Pricing
+train-083,The new monthly fee is not worth it,Pricing
+train-084,There are no plans within my budget,Pricing
+train-085,The application shuts down unexpectedly,Product Issues
+train-086,The screen becomes unresponsive during use,Product Issues
+train-087,The software closes without warning,Product Issues
+train-088,The page gets stuck when I submit information,Product Issues
+train-089,I have not signed into my account for a long time,Lack of Use
+train-090,I have not accessed this service recently,Lack of Use
+train-091,I stopped opening the app months ago,Lack of Use
+train-092,My account has been inactive for weeks,Lack of Use

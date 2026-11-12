@@ -1,0 +1,33 @@
+id,text,theme
+test-001,The latest rate hike pushed this out of my budget,Pricing
+test-002,I liked it but the renewal fee is more than I can pay,Pricing
+test-003,Too much money for a service I only use sometimes,Pricing
+test-004,I am reducing recurring bills because of the cost,Pricing
+test-005,The membership price is no longer reasonable,Pricing
+test-006,My student budget cannot cover the fee anymore,Pricing
+test-007,I could not find any affordable plan,Pricing
+test-008,The new billing amount is the reason I left,Pricing
+test-009,The application closes itself every time I try to use it,Product Issues
+test-010,I cannot complete a task without the page freezing,Product Issues
+test-011,The recent patch made the website unusable,Product Issues
+test-012,Nothing happens when I press the submit button,Product Issues
+test-013,My data will not synchronize across devices,Product Issues
+test-014,The service times out before it opens,Product Issues
+test-015,It continually shows an error code and exits,Product Issues
+test-016,Playback stutters and then stops entirely,Product Issues
+test-017,Nobody from the help desk got back to me,Customer Support
+test-018,Their agents kept passing me around with no answer,Customer Support
+test-019,I waited on hold and never reached anyone,Customer Support
+test-020,The response from support was dismissive,Customer Support
+test-021,They closed my case before fixing the problem,Customer Support
+test-022,I sent several messages asking for assistance and heard nothing,Customer Support
+test-023,Customer care made the situation worse,Customer Support
+test-024,I could not get a clear answer from their team,Customer Support
+test-025,I have not logged into my account all semester,Lack of Use
+test-026,This membership mostly sits idle,Lack of Use
+test-027,My routine changed and I no longer use the service,Lack of Use
+test-028,I signed up months ago and barely touched it,Lack of Use
+test-029,I simply have no need for the subscription now,Lack of Use
+test-030,I never find time to use this platform,Lack of Use
+test-031,It has been weeks since I last opened it,Lack of Use
+test-032,I am not using it often enough to continue,Lack of Use
