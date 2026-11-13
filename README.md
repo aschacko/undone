@@ -126,6 +126,27 @@ apply_theme_assignments(dataset, {response_id: (theme_name, confidence), ...})
 
 `apply_theme_assignments` creates themes marked "Detected by AI", ignores any id that is not in the dataset, and marks the dataset **Analyzed**. Its behavior is covered by `AIHandOffTests`. The model, its preprocessing and its evaluation will be documented in `README_AI.md`.
 
+### Initial AI prototype (P2-A3)
+
+The initial AI implementation uses TF-IDF with Logistic Regression through Scikit-learn to classify customer cancellation feedback.
+
+The implementation plan and experiment results are documented in [P2-A3 AI Implementation](docs/P2-A3_ai_implementation.md).
+
+The model was trained using 92 synthetic cancellation responses and evaluated on 32 development test responses. It achieved 90.6% accuracy with a macro F1 score of 0.905. These results are from synthetic data and do not represent verified real-world accuracy.
+
+To reproduce the experiment, install the dependencies using `pip install -r requirements.txt` and run:
+
+```bash
+python -m ai_comparison.logistic_model
+```
+
+The training data is in `sample_data/train.csv` and the test data is in `sample_data/test.csv`.
+
+The trained model is saved to `ai_comparison/cancellation_logistic.joblib`. Predictions are saved to `results/logistic_predictions.csv`.
+
+Automatic theme detection has not been connected to Django yet. This is planned for the final project.
+
+
 ## Documentation
 
 - [docs/P2-A3_roadmap.md](docs/P2-A3_roadmap.md): first-draft status and the roadmap to Dec 8

@@ -60,6 +60,16 @@ The model does not require a GPU or an external AI service. It can make predicti
 
 PythonAnywhere's free plan has a 512 MiB disk storage limit. Although the model file is small we still need to check whether the complete Django application and its dependencies fit within the available storage.
 
+## Reproducing the AI Experiment
+
+The AI prototype is located in `ai_comparison/`. The training data is stored in `sample_data/train.csv` and the test responses are in `sample_data/test.csv`. Both datasets contain synthetic customer feedback.
+
+The model can be trained and tested by running `python -m ai_comparison.logistic_model` from the main project folder after installing the requirements. The script trains the Logistic Regression model and tests it on 32 responses. It then prints the accuracy and macro F1 score along with the prediction time.
+
+The trained model is saved as `ai_comparison/cancellation_logistic.joblib` and the predictions are saved in `results/logistic_predictions.csv`. The current model was trained using 92 synthetic responses and achieved 90.6% accuracy on the development test set.
+
+This experiment currently runs separately from Django. The model is saved so it can be reused when the Django integration is implemented for the final submission.
+
 ## AI Reliability and Limitations
 
 The model can still make incorrect predictions when customers use unfamiliar wording or mention multiple reasons for canceling. Logistic Regression also predicts one main theme which may not fully represent feedback containing several complaints.

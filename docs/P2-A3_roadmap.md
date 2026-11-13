@@ -18,10 +18,10 @@ The team split the six final-project parts as follows (agreed by message, week o
 ## First-draft requirements: where each one is
 
 | Requirement | Owner | Where |
-|---|---|---|
+|---|---|--|
 | 1. Updated product scope (1 page) | Laasyasri | This repository, under docs folder (P2-A3_part1.pdf) |
 | 2. Functional Django foundation | Ashok | This repository. See README "Features working in this draft". |
-| 3. Initial AI implementation / plan | Laasyasri | *To be added by Laasyasri.* The Django hand-off point is ready (README, "AI functionality"). |
+| 3. Initial AI implementation / plan | Laasyasri | `docs/P2-A3_ai_implementation.md`. AI prototype and model training code in `ai_comparison/`. Training and test datasets in `sample_data/`. |
 | 4. Development progress and roadmap | Both | This file |
 | 5. GitHub submission with README | Ashok | This repository |
 
@@ -44,8 +44,8 @@ Dates marked *proposed* have not yet been agreed by the whole team.
 |---|---|---|---------------------|
 | Django core features | **Done for draft.** Upload, mapping, dashboard, responses, theme CRUD, export. Remaining: trend view by theme and plan-vs-plan comparison page (wireframes 7 and 8), and the analysis status page (wireframe 4). | Ashok | Nov 23 *(proposed)* |
 | Database and APIs | **Done for draft.** 3 models, migrations, summary JSON API. Remaining: analysis-status API for the processing page, and per-theme trend data in the API. | Ashok | Nov 23 *(proposed)* |
-| AI integration | Not started in this repository. Django hand-off functions are ready and tested (`responses_for_analysis`, `apply_theme_assignments`). | Laasyasri | Nov 25 *(proposed)* |
-| Evaluation and testing | Django test suite: 29 tests passing. AI evaluation (5 realistic tests, failure analysis, before/after improvement) not started. | Laasyasri (AI evaluation), Ashok (Django tests) | Dec 2 *(proposed)*  |
+| AI integration | Initial TF-IDF and Logistic Regression model trained using 92 synthetic responses. Saved reusable model. Django integration pending. | Laasyasri | Nov 25 *(proposed)* |
+| Evaluation and testing | Tested on 32 synthetic responses. Accuracy improved from 84.4% to 90.6% after adding 12 training examples. Independent testing and Django evaluation pending.| Laasyasri (AI evaluation), Ashok (Django tests) | Dec 2 *(proposed)*  |
 | Deployment | Not started. Production settings, WhiteNoise and the secret-key check are already in place. Next: PythonAnywhere deploy, HTTPS settings, cost comparison, 10k-DAU scalability write-up. | Ashok | Dec 1 *(proposed)*  |
 | Documentation | README with setup, environment, database, run and test steps is done. Remaining: `README_AI.md` (Laasyasri), deployment section, final screenshots. | Ashok (README), Laasyasri (README_AI.md) | Dec 6 *(proposed)*  |
 
