@@ -12,6 +12,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
 from django.views.decorators.http import require_POST
 from django.views.generic import DeleteView, ListView, UpdateView
+from .ai_classifier import analyze_dataset
 
 from .forms import (
     AssignThemeForm, ColumnMappingForm, DatasetEditForm, DatasetUploadForm, SignUpForm, ThemeForm,
@@ -190,6 +191,26 @@ def dataset_detail(request, pk):
     }
     return render(request, 'feedback/dataset_detail.html', context)
 
+@login_required
+@require_POST
+def run_ai_analysis(request, pk):
+    dataset = owned_dataset(request, pk)
+    if dataset.status == Dataset.Status.MAPPING:
+        messages.error(request, "Import the CSV before running AI analysis.")
+        return redirect(dataset)
+    try:
+        updated = analyze_dataset(dataset)
+        if updated:
+            messages.success(request, f"AI analysis completed. {updated} responses classified.")
+        else:
+            messages.info(request, "No unassigned responses to analyze.")
+    except (FileNotFoundError, ValueError) as exc:
+        messages.error(request, f"AI analysis failed: {exc}")
+    except Exception:
+        messages.error(request, "AI analysis failed. Please check the server logs.")
+        import logging
+        logging.getLogger(__name__).exception("AI analysis failed for dataset %s", dataset.pk)
+    return redirect("feedback:dataset_detail", pk=dataset.pk)
 
 class OwnedDatasetMixin(LoginRequiredMixin):
     def get_queryset(self):

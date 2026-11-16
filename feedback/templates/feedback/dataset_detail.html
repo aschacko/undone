@@ -4,6 +4,16 @@
 {% block content %}
 {% include 'feedback/_dataset_tabs.html' with tab='dashboard' %}
 
+<section class="card">
+  <h2>AI Theme Analysis</h2>
+  <p class="muted">Automatically classify unassigned cancellation feedback using Logistic Regression.</p>
+  <form method="post" action="{% url 'feedback:run_ai_analysis' dataset.pk %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Analyze with AI</button>
+  </form>
+</section>
+
+
 <section class="kpis">
   <div class="card kpi"><span class="muted">Responses</span><b>{{ stats.total }}</b></div>
   <div class="card kpi"><span class="muted">Themes</span><b>{{ stats.theme_count }}</b></div>

@@ -10,6 +10,7 @@ urlpatterns = [
     path('datasets/', views.DatasetListView.as_view(), name='dataset_list'),
     path('datasets/upload/', views.upload, name='upload'),
     path('datasets/<int:pk>/', views.dataset_detail, name='dataset_detail'),
+    path('datasets/<int:pk>/analyze/', views.run_ai_analysis, name='run_ai_analysis'),
     path('datasets/<int:pk>/map/', views.map_columns, name='map_columns'),
     path('datasets/<int:pk>/edit/', views.DatasetUpdateView.as_view(), name='dataset_edit'),
     path('datasets/<int:pk>/delete/', views.DatasetDeleteView.as_view(), name='dataset_delete'),
